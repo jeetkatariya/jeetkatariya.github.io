@@ -54,6 +54,13 @@
         const response = await fetch("https://primes-service-latest-jeetkatariya.onrender.com/primes/" + n);
         const result = await response.json();
         document.getElementById("prime_ans").innerHTML = result}
+
+    async function caesarEncode() {
+        const cipherText = document.getElementById("cipherTest");            
+        let n = cipherText.value;            
+        const cresponse = await fetch("https://ciphers-service-jeetkatariya.onrender.com/ciphers/caesar/"+ n +"/3");
+        const cresult = await cresponse.json();
+        document.getElementById("prime_ans").innerHTML = cresult}    
         
 </script>
 
@@ -80,7 +87,18 @@
                 <label id="primeCheckResult"></label> 
                 <p id="prime_ans"></p>
             </section>           
-        </div>       
+        </div> 
+        <div class="column">
+            <section>
+                <h2>Caesar Cipher</h2>                
+                <label>Text:</label>
+                <input id="cipherTest"/>
+                <button onclick="caesarEncode()">Cipher</button>
+                <label id="cipherResult"></label> 
+                <p id="cipher_ans"></p>
+            </section>           
+        </div> 
+             
      </div>
    
 </body>
