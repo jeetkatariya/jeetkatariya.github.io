@@ -60,7 +60,7 @@
         let n = cipherText.value;            
         const cresponse = await fetch("https://ciphers-service-jeetkatariya.onrender.com/ciphers/caesar/"+ n +"/3");
         const cresult = await cresponse.json();
-        document.getElementById("prime_ans").innerHTML = cresult}    
+        document.getElementById("prime_ans").innerHTML = cresult.cipher}    
         
 </script>
 
